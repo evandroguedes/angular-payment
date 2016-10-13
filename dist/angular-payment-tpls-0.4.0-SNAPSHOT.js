@@ -529,3 +529,18 @@ angular.module('payment.cardNumber', ['payment.service', 'payment.restrictNumeri
             }
         };
     }]);
+
+    angular.module("template/cardCvc/cardCvc.html", []).run(["$templateCache", function($templateCache) {
+      $templateCache.put("template/cardCvc/cardCvc.html",
+        "<input type=\"text\" x-autocompletetype=\"cc-csc\" restrict-numeric card-cvc-validator card-cvc-formatter ng-maxlength=\"4\" ng-pattern=\"/\\d*/\" />");
+    }]);
+
+    angular.module("template/cardExpiry/cardExpiry.html", []).run(["$templateCache", function($templateCache) {
+      $templateCache.put("template/cardExpiry/cardExpiry.html",
+        "<input type=\"text\" class=\"cc-exp\" x-autocompletetype=\"cc-exp\" maxlength=\"9\" restrict-numeric card-expiry-validator card-expiry-formatter />");
+    }]);
+
+    angular.module("template/cardNumber/cardNumber.html", []).run(["$templateCache", function($templateCache) {
+      $templateCache.put("template/cardNumber/cardNumber.html",
+        "<input type=\"text\" x-autocompletetype=\"cc-number\" restrict-numeric card-number-validator card-number-formatter />");
+    }]);    
