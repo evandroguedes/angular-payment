@@ -105,6 +105,13 @@ angular.module('payment.service', [])
                     length: [16],
                     cvcLength: [3],
                     luhn: false
+                }, {
+                    type: 'hipercard',
+                    pattern: /^((606282|637095|637568)[0-9]{10}|38[0-9]{14,17})/,
+                    format: defaultFormat,
+                    length: [13, 16, 19],
+                    cvcLength: [3],
+                    luhn: false
                 }
             ],
             trim = function (str) {
